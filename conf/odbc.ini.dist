@@ -1,0 +1,16 @@
+[CustomDB]
+Description         = Custom PostgreSQL Database
+Driver              = PostgreSQL Unicode
+Trace               = No
+TraceFile           = /tmp/psqlodbc.log
+Database            = CustomDB
+Servername          = se2ve2n4me
+UserName            = us9rn4me
+Password            = passw0rd
+Port                = 5432
+ReadOnly            = Yes
+RowVersioning       = No
+ShowSystemTables    = No
+ShowOidColumn       = No
+FakeOidIndex        = No
+ConnSettings        =
