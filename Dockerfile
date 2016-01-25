@@ -44,7 +44,7 @@ RUN R -e "install.packages(c('dplyr', 'ggplot2'), repos='http://cran.rstudio.com
 RUN R -e "install.packages(c('htmlwidgets', 'RColorBrewer'), repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages(c('base64enc', 'png', 'raster'), repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('scales', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/'); \
+RUN R -e "install.packages('devtools', dependencies=TRUE, repos='http://cran.rstudio.com/'); \
     devtools::install_github('rstudio/leaflet')"
 
 ###
