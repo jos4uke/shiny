@@ -37,6 +37,17 @@ RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cran.rstudio.
 
 RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/
 
+### Arabidopsis thaliana mucilage Database explorer ###
+
+RUN apt-get install -y odbc-postgresql r-cran-rodbc
+RUN R -e "install.packages(c('dplyr', 'ggplot2'), repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages(c('htmlwidgets', 'RColorBrewer'), repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages(c('base64enc', 'png', 'raster'), repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('scales', repos='http://cran.rstudio.com/')"
+RUN R -e "devtools::install_github('rstudio/leaflet')"
+
+###
+
 EXPOSE 3838
 
 COPY shiny-server.sh /usr/bin/shiny-server.sh
